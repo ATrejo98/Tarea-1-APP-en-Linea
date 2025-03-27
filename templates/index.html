@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2>Mis Tareas</h2>
+<form method="post" action="/add">
+  <input name="title" placeholder="Título de la tarea" required><br>
+  <input name="description" placeholder="Descripción"><br>
+  <button type="submit">Agregar Tarea</button>
+</form>
+
+<ul>
+  {% for task in tasks %}
+    <li>
+      <strong>{{ task[2] }}</strong>: {{ task[3] }} 
+      <div style="float: right;">
+        <a href="/edit/{{ task[0] }}">[Editar]</a>
+        <a href="/delete/{{ task[0] }}">[Eliminar]</a>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="logout">
+  <a href="/logout">Cerrar sesion</a>
+</div>
+

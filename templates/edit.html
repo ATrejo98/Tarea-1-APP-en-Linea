@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2>Editar Tarea</h2>
+<form method="post">
+  <input name="title" placeholder="Título" value="{{ task[2] }}" required><br>
+  <input name="description" placeholder="Descripción" value="{{ task[3] }}"><br>
+  <button type="submit">Guardar Cambios</button>
+</form>
+
+<div class="logout">
+  <a href="/">Cancelar</a>
+</div>
